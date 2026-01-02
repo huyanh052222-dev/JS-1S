@@ -59,7 +59,7 @@
             width: 600px;
             border-radius: 10px;
             box-shadow: 5px 10px 10px rgba(160, 160, 160, 0.534);
-            #name, #mssv, #submit{
+            #name, #idCode, #submit{
                 /* background-color: red; */
                 width: 400px;
                 margin: 0 auto;
@@ -91,7 +91,7 @@
     <div id="form-input">
         <h1>Enter your Student Card!</h1>
         <input id="name" type="text" placeholder="Enter your name...">
-        <input id="mssv" type="text" placeholder="Enter your ID student...">
+        <input id="idCode" type="text" placeholder="Enter your ID student...">
         <button onclick="userID()" id="submit" type="button">Submit</button>
     </div>
 
@@ -110,7 +110,7 @@
         function userID() {
             const myForm = document.getElementById("form-input");
             const userName = document.getElementById("name").value;
-            const userID = document.getElementById("mssv").value;
+            const userID = document.getElementById("idCode").value;
 
             const nameDisplay = document.getElementById("name-display");
             const userIDDisplay = document.getElementById("ID-display");
