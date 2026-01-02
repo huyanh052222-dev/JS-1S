@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1</title>
+    <style>
+        body{
+            display: flex;
+            margin: 0 auto;
+            background-color: rgb(61, 61, 61);
+        }
+        .wrap{
+            display: none;
+            margin: 0 auto;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(249, 249, 250);
+            margin-top: 30px;
+            height: 300px;
+            width: 600px;
+            border-radius: 10px;
+            box-shadow: 5px 10px 10px rgba(160, 160, 160, 0.534);
+        }
+        .decorate{
+            color: rgb(0, 0, 0);
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            align-items: center;
+            font-weight: 600;
+            .avt{
+                width: 60px;
+                height: 60px;
+                padding: 5px;
+                border-radius: 50%;
+                border: solid 2px black;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+                
+            }
+            .content{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+        #form-input{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            gap: 20px;
+            margin: 0 auto;
+            background-color: rgb(249, 249, 250);
+            margin-top: 30px;
+            height: 300px;
+            width: 600px;
+            border-radius: 10px;
+            box-shadow: 5px 10px 10px rgba(160, 160, 160, 0.534);
+            #name, #mssv, #submit{
+                /* background-color: red; */
+                width: 400px;
+                margin: 0 auto;
+            }
+            #name{
+                /* margin-top: 60px; */
+            }
+            #submit{
+                background-color: rgb(86, 86, 190);
+                color: white;
+                height: 30px;
+                width: 200px;
+                border-radius: 5px;
+                border: none;
+                transition: all 0.2s ease;
+            }
+            #submit:hover{
+                transform: scale(1.05);
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.375);
+            }
+            #submit:active{
+                transform: scale(1.01);
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="form-input">
+        <h1>Enter your Student Card!</h1>
+        <input id="name" type="text" placeholder="Enter your name...">
+        <input id="mssv" type="text" placeholder="Enter your ID student...">
+        <button onclick="userID()" id="submit" type="button">Submit</button>
+    </div>
+
+    <div class="wrap">
+        <div id="display-form">
+            <div class="avt"><img src="/solar_user-bold.svg" alt=""></div>
+            <div class="content">
+                <div id="name-display"></div>
+                <div id="ID-display"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function userID() {
+            const myForm = document.getElementById("form-input");
+            const userName = document.getElementById("name").value;
+            const userID = document.getElementById("mssv").value;
+
+            const nameDisplay = document.getElementById("name-display");
+            const userIDDisplay = document.getElementById("ID-display");
+
+            myForm.style.display = 'none';
+            const wrap = document.querySelector(".wrap");
+            if (wrap) {
+                wrap.style.display = 'flex'; 
+            }
+            
+            nameDisplay.innerHTML = 'Name: ' + userName;
+            userIDDisplay.innerHTML = 'ID: ' + userID;   
+
+            const display = document.getElementById("display-form");
+            display.classList.add('decorate');
+        }
+    </script>
+
+</body>
+</html>
